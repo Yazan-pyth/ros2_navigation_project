@@ -17,3 +17,13 @@
 
 ```bash
 git clone https://github.com/Yazan-pyth/ros2_navigation_project.git
+
+"" **Установка необходимых инструментов**
+Перед началом работы убедитесь, что у вас установлены следующие компоненты: 
+
+## **1. Проверьте установку РОС2:** 
+```bash
+ros2 --version
+echo $ROS_DISTRO   # должно быть humble 
+
+
