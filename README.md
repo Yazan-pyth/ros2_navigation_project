@@ -64,3 +64,36 @@ source install/setup.bash
 ```
 
 ## **🎮 Запуск и управление**
+
+## ** Терминал 1 – Gazebo с роботом ** 
+```bash
+export TURTLEBOT3_MODEL=burger
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
+
+## ** Терминал 2 – узел навигации **
+```bash
+cd ~/ros2_ws
+source install/setup.bash
+ros2 run ros2_navigation_project global_planner_node
+```
+
+## ** Терминал 3 – RViz для визуализации и управления **
+```bash
+ros2 run rviz2 rviz2
+```
+
+## 🖥️ Настройка RViz и отправка цели 
+    1. В окне RViz в левой панели Displays:
+
+        `Global Options → Fixed Frame = map`
+
+    2. Добавьте необходимые отображения:
+
+        `Add → Map – показывает строящуюся карту (топик /map).`
+
+        `Add → Path – выберите топик /global_plan – показывает траекторию, найденную A*.`
+
+    3. Выберите инструмент 2D Goal Pose (кнопка на верхней панели).
+    4. Кликните левой кнопкой мыши на карте в том месте, куда нужно отправить робота.
+    При клике RViz публикует сообщение в топик `/goal_pose`. Ваш узел получит цель, построит A*-путь, и робот начнёт движение, отображая путь в RViz.
