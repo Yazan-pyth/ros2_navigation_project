@@ -18,12 +18,22 @@
 ```bash
 git clone https://github.com/Yazan-pyth/ros2_navigation_project.git
 ```
-"" **Установка необходимых инструментов**
+## **Установка необходимых инструментов**
 Перед началом работы убедитесь, что у вас установлены следующие компоненты: 
 
 ## **1. Проверьте установку РОС2:** 
 ```bash
 ros2 --version
 echo $ROS_DISTRO   # должно быть humble 
+```
 
+## ** 2. Gazebo:
+```bash
+sudo apt install ros-humble-gazebo-ros-pkgs
+```
 
+## ** 3. TurtleBot3 симуляция 
+
+```bash
+sudo apt install ros-humble-turtlebot3*
+```
